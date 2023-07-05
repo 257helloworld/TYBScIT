@@ -16,4 +16,5 @@ def dfs(visited,graph,root):
         for neighbour in graph[root]:
             dfs(visited,graph,neighbour)
 
+print("Depth First Search: ")
 dfs(visited ,graph,'A')
