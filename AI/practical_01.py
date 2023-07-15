@@ -1,3 +1,5 @@
+# Write a program to implement Breadth First Search Algorithm.
+
 graph = {
     'A': ['B', 'C'],
     'B': ['A', 'D', 'E', 'F'],

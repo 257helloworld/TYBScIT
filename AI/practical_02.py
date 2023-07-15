@@ -1,3 +1,5 @@
+# Write a program to implement Depth First Search Algorithm.
+
 graph = {
     'A': set(['B', 'C']),
     'B': set(['A', 'D', 'E']),
