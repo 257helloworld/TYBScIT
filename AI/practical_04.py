@@ -14,14 +14,36 @@ for key in theBoard:
 def gameOver(turn):
     printBoard()
     print("\nGame Over")
-    print(turn + " won.")
+    print(f"{turn} won.")
     
 def printBoard():
-    print(theBoard['7'] + ' | ' + theBoard['8'] + ' | ' + theBoard['9'])
+    print(f"{theBoard['7']} | {theBoard['8']} | {theBoard['9']}")
     print('--+---+--')
-    print(theBoard['4'] + ' | ' + theBoard['5'] + ' | ' + theBoard['6'])
+    print(f"{theBoard['4']} | {theBoard['5']} | {theBoard['6']}")
     print('--+---+--')
-    print(theBoard['1'] + ' | ' + theBoard['2'] + ' | ' + theBoard['3'])
+    print(f"{theBoard['1']} | {theBoard['2']} | {theBoard['3']}")
+
+def findWinner():
+    if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ':
+        return True
+    elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ':
+        return True
+    elif theBoard['1'] == theBoard['2'] == theBoard['3'] != ' ':
+        return True
+        
+    # Vertical
+    elif theBoard['7'] == theBoard['4'] == theBoard['1'] != ' ':
+        return True
+    elif theBoard['8'] == theBoard['5'] == theBoard['2'] != ' ':
+        return True
+    elif theBoard['9'] == theBoard['6'] == theBoard['3'] != ' ':
+        return True
+        
+    # Diagonal
+    elif theBoard['1'] == theBoard['5'] == theBoard['9'] != ' ':
+        return True
+    elif theBoard['3'] == theBoard['5'] == theBoard['7'] != ' ':
+        return True
     
 def game():
     turn='X'
@@ -29,46 +51,20 @@ def game():
     
     for i in range(9):
         printBoard()
-        move=input("Your turn "+turn + ": ")
+        move=input(f"Your turn {turn}: ")
         
         if theBoard[move]==' ':
             theBoard[move]=turn
             count+=1
         else:
-            print("War: The place {} is already filled, Choose another place".format(move))
+            print(f"War: The place {move} is already filled. Choose another place")
             continue
             
         if count >= 5:
-            # Horizontal
-            if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ':
+            if(findWinner):
                 gameOver(turn)
                 break
-            elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ':
-                gameOver(turn)
-                break
-            elif theBoard['1'] == theBoard['2'] == theBoard['3'] != ' ':
-                gameOver(turn)
-                break
-                
-            # Vertical
-            elif theBoard['7'] == theBoard['4'] == theBoard['1'] != ' ':
-                gameOver(turn)
-                break
-            elif theBoard['8'] == theBoard['5'] == theBoard['2'] != ' ':
-                gameOver(turn)
-                break
-            elif theBoard['9'] == theBoard['6'] == theBoard['3'] != ' ':
-                gameOver(turn)
-                break
-                
-            # Diagonal
-            elif theBoard['1'] == theBoard['5'] == theBoard['9'] != ' ':
-                gameOver(turn)
-                break
-            elif theBoard['3'] == theBoard['5'] == theBoard['7'] != ' ':
-                gameOver(turn)
-                break
-                
+              
         if count == 9:
             printBoard()
             print("Game over. Tie!")
