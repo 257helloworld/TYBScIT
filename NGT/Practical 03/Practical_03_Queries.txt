@@ -1,0 +1,36 @@
+Implementing Aggregation.
+
+use tya
+db.createCollection("Class")
+db.Class.insert({rollNo: 1, name: "Sudhanshu", course: "BScIT", fees: 29000, marks: 490})
+db.Class.insert({rollNo: 2, name: "Himanshu", course: "BBI", fees: 19000, marks: 400})
+db.Class.insert({rollNo: 3, name: "Meera", course: "BScIT", fees: 29000, marks: 450})
+db.Class.insert({rollNo: 4, name: "Yash", course: "BAF", fees: 24000, marks: 420})
+db.Class.insert({rollNo: 5, name: "Soham", course: "BAF", fees: 24000, marks: 550})
+db.Class.insert({rollNo: 6, name: "Arjun", course: "BScIT", fees: 29000, marks: 420})
+
+A. Write a mongodb query to use sum, avg, min and max expression.
+i. Sum
+db.Class.aggregate([{$group: {_id: "$course", StudentCount: {$sum: 1}}}])
+db.Class.aggregate([{$group: {_id: "$course", TotalFees: {$sum: "$fees"}}}])
+
+ii. Avg
+db.Class.aggregate([{$group: {_id: "$course", AverageMarks: {$avg: "$marks"}}}])
+
+iii. Min
+db.Class.aggregate([{$group: {_id: "$course", MinimumMarks: {$min: "$marks"}}}])
+
+iv. Max
+db.Class.aggregate([{$group: {_id: "$course", MaximumMarks: {$max: "$marks"}}}])
+
+B. Write a mongodb query to use push and addToSet expression.
+i. push
+db.Class.aggregate([{$group: {_id: "$course", pushFees: {$push: "$fees"}}}])
+ii. addToSet
+db.Class.aggregate([{$group: {_id: "$course", addToSetFees: {$push: "$fees"}}}])
+
+C. Write a mongodb query to use first and last expression
+i. first
+db.Class.aggregate([{$group: {_id: "$course", firstMarks: {$first: "$marks"}}}])
+ii. last
+db.Class.aggregate([{$group: {_id: "$course", lastMarks: {$last: "$marks"}}}])

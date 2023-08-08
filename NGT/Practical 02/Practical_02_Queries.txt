@@ -1,0 +1,64 @@
+Simple Queries with MongoDB (Importing JSON file)
+
+Importing JSON file.
+Step 1: Open Command Prompt
+Step 2: type cd and then copy the path of mongodb bin
+	cd C:\Program Files\MongoDB\Server\3.2\bin
+step 3: C:\Program Files\MongoDB\Server\3.2\bin> mongoimport --db ty --collection hotel --file d:\restaurants.json
+step 4: switch to mongo shell.
+
+Queries
+a. Retrieve hotel collection
+db.hotel.find()
+
+b. Write a mongodb query to display the fields restaurant_id, borough and cuisine for all the documents in the collection hotel
+db.hotel.find({},{restaurant_id: 1, borough: 1, cuisine: 1}).pretty()
+
+c. Write a mongodb query to display the fields restaurant_id, borough and cuisine but exclude the field _id for all the documents in the collection hotel
+db.hotel.find({},{restaurant_id: 1, borough: 1, cuisine: 1, _id: 0}).pretty()
+
+d. Write a mongodb query to display all the restaurants which are in borough Bronx.
+db.hotel.find({borough: "Bronx"}).pretty()
+
+e. Write a mongodb query to display first 5 restaurants which is in the borough Bronx.
+db.hotel.find({borough: "Bronx"}).limit(5).pretty()
+
+f.Write a mongodb query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx.
+db.hotel.find({borough: "Bronx"}).skip(5).limit(5).pretty()
+
+g. Write a mongodb query to display restaurant_id, name, borough and cuisine for those restaurants which contain "Wil" as first 3 letters for its name.
+db.hotel.find({name: {$regex: /^Wil/i}},{restaurant_id: 1, name: 1, borough: 1, cuisine: 1})
+
+h. Write a mongodb query to display restaurant_id, name, borough and cuisine for those restaurants which contain "ces" as last 3 letters for its name.
+db.hotel.find({name: {$regex: /ces$/i}},{restaurant_id: 1, name: 1, borough: 1, cuisine: 1})
+
+i. Write a mongodb query to display restaurant_id, name, borough and cuisine for those restaurants which contain "reg" as 3 letter somewhere in its name.
+db.hotel.find({name: {$regex: /ces/i}},{restaurant_id: 1, name: 1, borough: 1, cuisine: 1})
+
+j. Write a mongodb query to display the restaurants which belong to the borough Bronx and prepare either Russian or Chinese dish.
+db.hotel.find({borough: "Bronx", cuisine: {$in: ["Russian","Chinese"]}}, {_id: 0})
+
+
+k. Write a mongodb query to display restaurants which do not prepare any cuisine of American and their grade score is more than 10.
+db.hotel.find({"grades.score": {$gt: 10},cuisine: {$ne: "American "}})
+
+l. Write a mongodb query to find the restaurants which locate in latitude value less than -95.754168.
+db.hotel.find({"address.coord.0": {$lt: -95.754168}}, {_id: 0, grades: 0})
+
+m. Write a mongodb query to find the restaurant_id, name, borough and cuisine for those restaurants which prepare dish except American and Chinese or restaurant name begins with letters 'Wil'
+db.hotel.find({$or: [{cuisine: {$nin: ["American ", "Chinese"]}}, {name: {$regex: /^Wil/i}}]}, {_id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1})
+
+n. Write a mongodb query to find the restaurant_id, name and grades for those restaurants which achieved a grade of "A" and scored 11 on an ISODate "2014-08-11T00:00:00Z" among many of survey dates.
+db.hotel.find({"grades.date": ISODate("2014-08-11T00:00:00Z"), "grades.grade": "A", "grades.score": 11},{_id: 0, restaurant_id: 1, name: 1, grades: 1})
+
+o. Write a mongodb query to find the restaurant_id, name, address and geographical location for those restaurants where 2nd element of coord array contains a value which is more than 42 and upto 52.
+db.hotel.find({"address.coord.1": {$gt: 42, $lt: 52}},{_id: 0, restaurant_id: 1, name: 1, address: 1})
+
+p. Write a mongodb query to arrange the name of the restaurants in ascending order along with all the columns.
+db.hotel.find().sort({name: 1}).pretty()
+
+q. Write a mongodb query to find the restaurant name, borough, longitute and latitude and cuisine for those restaurants which contains "mon" as three letters somewhere in its name.
+db.hotel.find({name: {$regex: /mon/i}},{name: 1, borough: 1, "address.coord": 1, _id: 0})
+
+r. Write a mongodb query to find the restaurant name, borough, longitute and latitude and cuisine for those restaurants which contains "Mad" as first three letters in its name.
+db.hotel.find({name: {$regex: /^Mad/i}},{name: 1, borough: 1, "address.coord": 1, _id: 0})

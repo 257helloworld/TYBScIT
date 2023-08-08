@@ -1,0 +1,24 @@
+Python and MongoDB
+
+Connecting python with MongoDB and inserting retrieving, updating and deleting.
+
+Required Python Module: "pymongo"
+To install run command: pip3 install pymongo
+
+1. Insert
+```
+run insert.py
+```
+
+2. Retrieve
+```
+run retrieve.py
+```
+3. Update
+```
+run update.py
+```
+4. Delete
+```
+run delete.py
+```

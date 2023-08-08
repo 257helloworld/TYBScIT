@@ -1,0 +1,29 @@
+Simple mongodb queries.
+
+1. Write a mongodb query to create and drop database.
+use library
+db.dropDatabase()
+
+2. Write a mongodb query to create, display and drop collection
+db.createCollection("Books")
+show collections
+db.Books.drop()
+
+3. Write a mongodb query to insert, update, delete a document.
+db.Books.insert({bno: 1, bname: "NGT"})
+db.Books.insert({bno: 2, bname: "IOT", price: 600})
+db.Books.insert({bno: 3, bname: "SPM", price: 800, author: "Walker Royce"})
+db.Books.insert({bno: 4, bname: "AI", price: 700})
+db.Books.insert({bno: 5, bname: "AWP", price: 900, author: "Ion Duckett"})
+
+4. Update
+i. Using update command change the price of book no. 3 to Rs. 500
+db.Books.update({bno: 3},{$set: {price: 500}})
+db.Books.find({bno: 3})
+
+ii. Using updatMany command add a new column publisher to the collection
+db.Books.updateMany({},{$set: {publisher: "Tech Max"}})
+db.Books.find({},{_id: 0}).pretty()
+
+iii. Delete book no. 4 using deleteOne method.
+db.Books.deleteOne({bno: 4})

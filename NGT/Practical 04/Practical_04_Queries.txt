@@ -1,0 +1,19 @@
+Backup and Restore
+
+a. Write a MongoDB query to create a backup of existing database.
+i. Start "mondodump" from MongoDB bin folder.
+mongodump --out <FolderLocation> --db <DBName>
+ex. mongodump --out D:\MongoBackup --db tya
+
+ii. Now you can delete "tya" database from the shell.
+use tya
+db.dropDatabase()
+show dbs
+
+b. write a MongoDB query to restore database from the backup.
+i. Write following query in cmd.
+mongorestore <FolderLocation>
+ex. mongorestore D:\MongoBackup
+
+ii. Now you can see the restored database.
+show dbs
