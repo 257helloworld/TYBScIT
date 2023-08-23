@@ -1,4 +1,4 @@
-# #Write a program to solve tower of Hanoi problem
+# Write a program to solve tower of Hanoi problem
 
 def toh(disks, source, auxiliary, target):
     if(disks==1):
