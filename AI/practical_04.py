@@ -46,17 +46,22 @@ def findWinner():
         return True
     
 def game():
+    range1=9
+    i=1
     turn='X'
     count=0
     
-    for i in range(9):
+    while i<=range1:
         printBoard()
         move=input(f"Your turn {turn}: ")
         
         if theBoard[move]==' ':
             theBoard[move]=turn
             count+=1
+            i+=1
         else:
+            i+=1
+            range1+=1
             print(f"War: The place {move} is already filled. Choose another place")
             continue
             
