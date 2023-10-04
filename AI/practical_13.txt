@@ -1,0 +1,18 @@
+A. Write a program to derive the predicate.
+
+1. Sachin is batsman.
+2. Batsman is cricketer.
+Prove Sachin is cricketer.
+
+batsman(sachin).
+cricketer(X):-batsman(X).
+
+B. Write a program to derive the predicate.
+
+1. John is son of Richard.
+2. Kevin is son of Richard.
+Prove John and Kevin are brothers.
+
+son(john, richard).
+son(kevin, richard).
+brothers(X, Y):-son(X, Z), son(Y, Z).

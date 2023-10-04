@@ -1,0 +1,30 @@
+Write a program which contain three predicates male, female, parent. 
+Make rules for following relations: father, mother, grandfather, grandmother, 
+rother, sister. Draw family tre.
+
+female(pam).
+male(tom).
+female(liz).
+male(bob).
+female(ann).
+female(pat).
+male(peter).
+male(jim).
+
+parent(pam,bob).
+parent(tom,bob).
+parent(tom,liz).
+parent(bob,ann).
+parent(bob,pat).
+parent(bob,peter).
+parent(peter,jim).
+
+mother(X,Y):-parent(X,Y),female(X).
+father(X,Y):-parent(X,Y),male(X).
+sister(X,Y):-female(X),parent(Z,X),parent(Z,Y),X\=Y.
+brother(X,Y):-male(X),parent(Z,X),parent(Z,Y),X\=Y.
+grandparent(X,Y):-parent(Z,Y),parent(X,Z).
+grandmother(X,Y):-mother(X,Z),parent(Z,Y).
+grandfather(X,Y):-father(X,Z),parent(Z,Y).
+wife(X,Y):-parent(X,Z),parent(Y,Z),female(X),male(Y).
+uncle(X,Y):-parent(Z,Y),brother(X,Z).
