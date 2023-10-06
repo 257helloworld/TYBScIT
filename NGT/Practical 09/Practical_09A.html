@@ -1,0 +1,39 @@
+<!-- JQuery Adding & Removing Class -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery CSS Class</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        .hello {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            $("#add").click(function(){
+                $("p:first").addClass("hello");
+            });
+            $("#remove").click(function(){
+                $("p:first").removeClass("hello");
+            });
+        });
+    </script>
+</head>
+<body style="margin-top: 30px; margin-left: 30px;">
+    <h2>This is heading</h2>
+    <p>This is first paragraph</p>
+    <p>This is another paragraph</p>
+    <button id="add">Add Class</button>
+    <button id="remove">Remove Class</button>
+    <script src="index.js"></script>
+</body>
+</html>

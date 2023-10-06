@@ -1,0 +1,48 @@
+<!-- JQuery set content -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Advanced</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        button{
+            padding: 8px 25px;
+        }
+        input[type='text']{
+            padding: 8px 20px;
+        }
+        body{
+            margin: 20px;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            $("#text").click(function(){   
+                $("#p").text("Hello, World!");
+            });
+            $("#html").click(function(){   
+                $("#p").html("Hello, <b>World!</b>");
+            });
+            $("#value").click(function(){   
+                $("input").val("Hello, World!");
+            })
+        });
+    </script>
+</head>
+<body>
+    <h2>JQuery Set Content</h2>
+    <p id="p">This is <b>Paragraph</b>.</p>
+    <button id="text">Set Text</button>
+    <button id="html">Set HTML</button>
+    <br><br>
+    <input type="text">
+    <button id="value">Set Value</button>
+    <br><br>
+    <p id="result"></p>
+</body>
+</html>

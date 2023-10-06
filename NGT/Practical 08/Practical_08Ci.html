@@ -1,0 +1,63 @@
+<!-- JQuery insert, remove content -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Advanced</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        button {
+            padding: 8px 25px;
+            margin: 0px 3px;
+        }
+        div{
+            padding: 10px;
+            border: 0.5px solid blue;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            // Insert Content
+            $("#btn1").click(function(){
+                $("#p1").append("<b>Appended Text</b>");
+            });
+            $("#btn2").click(function(){
+                $("#p1").prepend("<b>Prepended Text</b>");
+            });
+            $("#btn3").click(function(){
+                $("#p2").before("<b>Before</b>");
+            });
+            // Remove Content
+            $("#btn4").click(function(){
+                $("#p2").after("<b>After</b>");
+            });
+            $("#btn5").click(function(){
+                $("div").empty();
+            });
+            $("#btn6").click(function(){
+                $("div").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>JQuery Insert, Remove Content</h2>
+    <div>
+        <p id="p1">This is Append & Prepend</p>
+        <p id="p2">This is Before & After</p>
+    </div>
+        <br>
+    <button id="btn1">Append Text</button>
+    <button id="btn2">Prepend Text</button>
+    <button id="btn3">Insert Before</button>
+    <button id="btn4">Append After</button>
+    <br><br><br>
+    <button id="btn5">Empty div</button>
+    <button id="btn6">Delete div</button>
+
+</body>
+</html>

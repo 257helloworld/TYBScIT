@@ -1,0 +1,34 @@
+<!-- JQuery Changing -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Advanced</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        div{
+            margin: 20px;
+        }
+        button{
+            padding: 12px 25px;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#d1").slideUp(2000).css({"color": "blue"}).slideDown(2000).fadeTo("fast", 0.5);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>JQuery Changing</h2>
+    <div id="d1" style="height: 150px; width: 150px;"><h1>Jquery is Fun!</h1>
+        <button>Click me</button>
+    </div>
+</body>
+</html>

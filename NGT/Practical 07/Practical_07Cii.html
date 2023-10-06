@@ -1,0 +1,46 @@
+<!-- JQuery Sliding Effects -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Events</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        #flip{
+            height: 45px;
+            width: 400px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            /* To avoid selection of text */
+            -webkit-user-select: none;
+        }
+        #panel{
+            height: 80px;
+            width: 400px;
+            background-color: rgb(108, 108, 213);
+            text-align: center;
+            color: white;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            $("#flip").click(function(){
+                $("#panel").slideToggle()
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>JQuery Sliding effects.</h2>
+    <p>Hello, World!</p>
+    <div id="flip">Click to slide the panel</div>
+    <div id="panel">Hello, World!</div>
+</body>
+</html>

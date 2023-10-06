@@ -1,0 +1,76 @@
+<!-- JQuery Traversing -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversal</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        #div1 {
+            border: 1px solid black;
+            margin: auto;
+            height: 70vh;
+            width: 70%;
+            display: flex;
+        }
+
+        #div2 {
+            margin: auto;
+            border: 1px solid black;
+            height: 70%;
+            width: 70%;
+            display: flex;
+        }
+
+        #div3 {
+            margin: auto;
+            border: 1px solid black;
+            height: 70%;
+            width: 70%;
+            display: flex;
+        }
+
+        #div3 button {
+            height: 50px;
+            width: 150px;
+            margin: auto;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function() {
+            $("#direct").click(function(){
+                $("#div3").parent().css({"border": "4px solid red"});
+            });
+            $("#all").click(function(){
+                $("#div3").parents().css({"border": "4px solid red"});
+            });
+            $("#until").click(function(){
+                $("#div3").parentsUntil("body").css({"border": "4px solid red"});
+            });
+            $("#remove").click(function(){
+                $("#div3").parent().remove();
+                
+            });
+        });
+    </script>
+</head>
+<body style="height: 100vh; display: flex;">
+    <div id="div1" style="padding-left: 10px; padding-top: 10px;">
+        Grandparent
+        <div id="div2" style="padding-left: 10px; padding-top: 10px;">
+            Parent
+            <div id="div3" style="padding-left: 10px; padding-top: 10px;"><span>Child</span>
+            <button id="direct">Highlight Direct Parent</button>
+        <button id="all">Highlight All Parents</button>
+        <button id="until">Highlight Parent Until body</button>
+        <button id="remove">Remove parent</button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

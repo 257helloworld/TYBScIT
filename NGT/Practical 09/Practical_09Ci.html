@@ -1,0 +1,26 @@
+<!-- Creating JSON -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating JSON</title>
+    <!-- CSS -->
+    <style>
+        body{
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Creating an Object from a JSON String</h2>
+    <p id="demo"></p>
+
+    <script>
+        const txt = '{"name":"John","age":30,"city":"New York"}';
+        const obj = JSON.parse(txt);
+        document.getElementById("demo").innerHTML = obj.name + ", " + obj.age + ", " + obj.city;
+    </script>
+</body>
+</html>

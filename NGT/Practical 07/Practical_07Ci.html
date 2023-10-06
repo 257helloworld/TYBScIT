@@ -1,0 +1,47 @@
+<!-- JQuery Fading Effects -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Events</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        #box{
+            height: 150px;
+            width: 150px;
+            background-color: blue;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            $("#fadeIn").click(function(){
+                $("#box").fadeIn();
+            });
+            $("#fadeOut").click(function(){
+                $("#box").fadeOut();
+            });
+            $("#fadeToggle").click(function(){
+                $("#box").fadeToggle();
+            });
+            $("#fadeTo").click(function(){
+                $("#box").fadeTo("slow" ,0.5);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>JQuery Fading effects.</h2>
+    <p>Hello, World!</p>
+    <div id="box"></div>
+    <br>
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+    <button id="fadeToggle">Fade Toggle</button>
+    <button id="fadeTo">Fade To 0.5</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- JQuery Animation effects -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Advanced</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        * {
+            font-family: "Poppins";
+        }
+        div{
+            background-color: rgb(103, 90, 220); 
+            height: 100px; 
+            width: 100px; 
+            position: absolute;
+            color: white;
+            padding: 5px;
+        }
+        h1{
+            margin: auto;
+        }
+    </style>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            let div = $("div");
+            if(div.click(function(){
+                div.animate({height: '300'});
+                div.animate({width: '300', opacity: '0.4'});
+                div.animate({height: '100', opacity: '0.8'});
+                div.animate({width: '100', opacity: '1'});
+            }));
+        });
+  </script>
+</head>
+<body>
+    <h2>JQuery Animation Effects</h2>
+    <div>Click to Animate</div>
+</body>
+</html>

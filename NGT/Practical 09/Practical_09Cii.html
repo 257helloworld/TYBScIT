@@ -1,0 +1,34 @@
+<!-- Parsing JSON -->
+
+<!-- Note: Run with live server in VS Code. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing JSON</title>
+    <!-- CSS -->
+    <style>
+        body{
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Use XMLHttp Request to get the content of a file</h2>
+    <p id="demo"></p>
+    <p>Take a look at <a href="json.txt" target="_blank">json.txt</a></p>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) { 
+                var myObj = JSON.parse(this.responseText);
+                document.getElementById("demo").innerHTML = "Author: " + myObj.book[3];
+            }
+        };
+        xmlhttp.open("GET","data.txt",true);
+        xmlhttp.send(); 
+    </script>
+</body>
+</html>
