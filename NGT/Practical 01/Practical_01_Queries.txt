@@ -21,7 +21,7 @@ i. Using update command change the price of book no. 3 to Rs. 500
 db.Books.update({bno: 3},{$set: {price: 500}})
 db.Books.find({bno: 3})
 
-ii. Using updatMany command add a new column publisher to the collection
+ii. Using updateMany command add a new column publisher to the collection
 db.Books.updateMany({},{$set: {publisher: "Tech Max"}})
 db.Books.find({},{_id: 0}).pretty()
 
