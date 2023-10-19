@@ -7,7 +7,7 @@ reader = SimpleMFRC522()
 
 try:
     id, data = reader.read()
-    print(f"Id: {id}")
-    print(f"Data: {data}")
+    print("Id: {}".format(id))
+    print("Data: {}".format(data))
 finally:
     GPIO.cleanup()

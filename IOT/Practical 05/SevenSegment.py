@@ -70,7 +70,7 @@ while(True):
     h2 = int(hour % 10)
     m1 = int(minute / 10)
     m2 = int(minute % 10)
-    print(f"{h1}{h2}:{m1}{m2}")
+    print("{}{}:{}{}".format(h1, h2, m1, m2))
     digitOutputs = [h1, h2, m1, m2]
 
 

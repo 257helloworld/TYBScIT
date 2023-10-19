@@ -22,7 +22,7 @@ ledPin = 11
 def handle(msg):
     # chat_id = msg['chat']['id']
     command = msg['text'].lower()
-    print(f"Got command: {command}")
+    print("Got command: {}".format(command))
     if command == 'on':
         on(ledPin)
     elif command == 'off':
