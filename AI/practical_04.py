@@ -66,7 +66,7 @@ def game():
             continue
             
         if count >= 5:
-            if(findWinner):
+            if(findWinner()):
                 gameOver(turn)
                 break
               
