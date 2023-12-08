@@ -16,6 +16,7 @@ try:
             GPIO.output(pin, GPIO.HIGH)
             sleep(2)
             GPIO.output(pin, GPIO.LOW)
+            sleep(2)
 
 except KeyboardInterrupt:
     for pin in pins:
