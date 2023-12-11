@@ -62,7 +62,7 @@ def game():
         else:
             i+=1
             range1+=1
-            print("Warning: The place" + move + " is already filled. Choose another place")
+            print("Warning: The place " + move + " is already filled. Choose another place")
             continue
             
         if count >= 5:

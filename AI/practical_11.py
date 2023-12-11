@@ -14,14 +14,14 @@ for key in theBoard:
 def gameOver(turn):
     printBoard()
     print("\nGame Over")
-    print(f"{turn} won.")
+    print(turn + " won.")
     
 def printBoard():
-    print(f"{theBoard['7']} | {theBoard['8']} | {theBoard['9']}")
+    print(theBoard['7'] + " | " + theBoard['8'] + " | " + theBoard['9'])
     print('--+---+--')
-    print(f"{theBoard['4']} | {theBoard['5']} | {theBoard['6']}")
+    print(theBoard['4'] + " | " + theBoard['5'] + " | " + theBoard['6'])
     print('--+---+--')
-    print(f"{theBoard['1']} | {theBoard['2']} | {theBoard['3']}")
+    print(theBoard['1'] + " | " + theBoard['2'] + " | " + theBoard['3'])
 
 def findWinner():
     if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ':
@@ -46,22 +46,27 @@ def findWinner():
         return True
     
 def game():
+    range1=9
+    i=1
     turn='X'
     count=0
     
-    for i in range(9):
+    while i<=range1:
         printBoard()
-        move=input(f"Your turn {turn}: ")
+        move=input("Your turn " + turn + ": ")
         
         if theBoard[move]==' ':
             theBoard[move]=turn
             count+=1
+            i+=1
         else:
-            print(f"War: The place {move} is already filled. Choose another place")
+            i+=1
+            range1+=1
+            print("Warning: The place " + move + " is already filled. Choose another place")
             continue
             
         if count >= 5:
-            if(findWinner):
+            if(findWinner()):
                 gameOver(turn)
                 break
               

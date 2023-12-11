@@ -31,4 +31,4 @@ def miniMax(depth, nodeIndex, isMax, values, alpha, beta):
 if __name__ == "__main__":
     values = [2, 3, 5, 9, 0, 1, 7, 5]
     optimalValue = miniMax(0, 0, True, values, MIN, MAX)
-    print("Optimal Value: " + optimalValue)
+    print("Optimal Value: " + str(optimalValue))
