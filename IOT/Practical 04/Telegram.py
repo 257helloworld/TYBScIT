@@ -1,9 +1,5 @@
 # Controlling Raspberry Pi with Telegram.
 
-import sys
-import time
-import random
-import datetime
 import telepot
 import RPi.GPIO as GPIO
 
@@ -28,7 +24,7 @@ def handle(msg):
     elif command == 'off':
         off(ledPin)
 
-bot = telepot.Bot("Token")
+bot = telepot.Bot("Enter your token here.")
 
 bot.message_loop(handle)
 print("I am listening")

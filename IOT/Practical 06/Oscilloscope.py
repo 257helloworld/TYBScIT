@@ -17,7 +17,7 @@ print('Reading Channel 0')
 # Figure Function
 def makeFig():
     plt.ylim(-5000,5000)
-    plt.title('Osciloscope')
+    plt.title('Oscilloscope')
     plt.grid(True)
     plt.ylabel('ADC outputs')
     # ro- represents red circle and line.
