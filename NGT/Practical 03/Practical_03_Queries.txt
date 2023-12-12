@@ -27,7 +27,7 @@ B. Write a mongodb query to use push and addToSet expression.
 i. push
 db.Class.aggregate([{$group: {_id: "$course", pushFees: {$push: "$fees"}}}])
 ii. addToSet
-db.Class.aggregate([{$group: {_id: "$course", addToSetFees: {$push: "$fees"}}}])
+db.Class.aggregate([{$group: {_id: "$course", addToSetFees: {$addToSet: "$fees"}}}])
 
 C. Write a mongodb query to use first and last expression
 i. first
