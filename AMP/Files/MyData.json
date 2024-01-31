@@ -1,0 +1,21 @@
+[ {
+    "grade" : "A+",
+    "rno" : 1,
+    "sname" : "ABC"
+  }, {
+    "grade" : "C",
+    "rno" : 2,
+    "sname" : "XYZ"
+  }, {
+    "grade" : "O",
+    "rno" : 3,
+    "sname" : "PQR"
+  }, {
+    "grade" : "F",
+    "rno" : 4,
+    "sname" : "LMN"
+  }, {
+    "grade" : "D",
+    "rno" : 5,
+    "sname" : "AAA"
+  } ]
