@@ -1,0 +1,21 @@
+Chapter 1: The evolution of information security 
+  1.Benefits of security program
+   > i. Business Agility
+   > ii.Cost Reduction
+   > iii.Portability
+  2. Three D's defense,detection,deterrence
+  3. Strategy and Tactics.
+
+Chapter 2: Risk Analysis
+  1.Threat,vulnerability,risk
+   >Threat vectors
+  2.Types of Attacks
+   > Remote Acess Trojan (RAT)
+   > APT
+   > Zombie Trojan DDoS
+   > Network layer attacks, packet sniffing (Terminologies)
+   > Man in the middle attack
+   > DNS Spoofing Attack
+
+Chapter 3
+  Complete Chapter
