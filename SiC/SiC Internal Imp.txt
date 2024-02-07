@@ -3,11 +3,11 @@ Chapter 1: The evolution of information security
    > i. Business Agility
    > ii.Cost Reduction
    > iii.Portability
-  2. Three D's defense,detection,deterrence
+  2. Three D's defence,detection,deterrence
   3. Strategy and Tactics.
 
 Chapter 2: Risk Analysis
-  1.Threat,vulnerability,risk
+  1.Threat, vulnerability, risk
    >Threat vectors
   2.Types of Attacks
    > Remote Acess Trojan (RAT)
