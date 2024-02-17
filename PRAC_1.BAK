@@ -1,0 +1,25 @@
+//study and enlist the basic functions used for graphics in c/c++.Give an example for each shape.
+#include<graphics.h>
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+ int gd=DETECT,gm;
+ initgraph(&gd,&gm,"C:\\TC\\BGI");
+ circle(80,55,50);
+ outtextxy(55,120,"Circle");
+ rectangle(345,104,200,10);
+ outtextxy(235,120,"Rectangle");
+ ellipse(500,55,0,360,80,30);
+ outtextxy(475,120,"Ellipse");
+ line(80,240,500,240);
+ outtextxy(265,260,"line");
+ sector(80,350,20,290,45,65);
+ outtextxy(55,420,"Sector");
+ pieslice(280,350,40,190,50);
+ outtextxy(255,420,"Pieslice");
+ arc(480,350,60,220,50);
+ outtextxy(470,420,"Arc");
+ getch();
+ closegraph();
+}
